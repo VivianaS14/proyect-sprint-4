@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fast Kart</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn-icons-png.flaticon.com/512/9014/9014100.png"
+    />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="sticky-top">
+      <!-- Primera nav -->
+      <div class="container-fluid d-none d-lg-block py-1 color-green">
+        <div class="row justify-content-between">
+          <div class="col-5 ms-5">
+            <p class="d-inline p-2">Something you love is now on sale!</p>
+            <a href="" class="d-inline p-2 text-white">Buy Now!</a>
+          </div>
+          <div class="col-3 text-end me-5">
+            <img
+              class="d-inline"
+              src="https://cdn-icons-png.flaticon.com/512/3373/3373318.png"
+              alt=""
+              width="30"
+            />
+            <p class="d-inline p-2">English</p>
+            <p class="d-inline p-2">USD</p>
+          </div>
+        </div>
+      </div>
+      <!-- Segunda nav -->
+      <div
+        class="bg-white navbar navbar-expand-lg text-center py-3 py-lg-2 px-2 px-lg-5"
+      >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+          <a class="navbar-brand" href="./index.html">
+            <img src="./assets/logo.png" alt="Fast Kart" width="150" />
+          </a>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand d-none d-sm-inline" href="./index.html">
+            <img src="./assets/logo.png" alt="Fast Kart" width="150" />
+          </a>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 p-0 container">
+            <li class="nav-item col-lg-2">
+              <a class="nav-link active" aria-current="page" href="#">
+                <i class="bx bx-map fs-3"></i>
+              </a>
+            </li>
+            <li class="nav-item col-lg-6 mb-3 mb-lg-0">
+              <form
+                id="form-search"
+                class="d-flex input-group col-6"
+                role="search"
+              >
+                <input
+                  id="input-search"
+                  type="text"
+                  class="form-control"
+                  placeholder="Search product by name, price or quantity"
+                  aria-label="Search product by name, price or quantity"
+                  aria-describedby="button-addon2"
+                />
+                <button
+                  class="btn btn-outline-secondary color-orange"
+                  type="submit"
+                  id="btn-search"
+                >
+                  <i class="bx bx-search"></i>
+                </button>
+              </form>
+            </li>
+            <li class="nav-item col-lg mb-2 mb-lg-0">
+              <button class="btn border-end">
+                <i class="bx bx-phone-call fs-3"></i>
+              </button>
+              <button class="btn border-end">
+                <a href="./pages/favorites.html" class="text-black"
+                  ><i class="bx bx-heart fs-3"></i
+                ></a>
+              </button>
+              <button
+                type="button"
+                class="btn border-end position-relative"
+                data-bs-toggle="modal"
+                data-bs-target="#cartModal"
+              >
+                <i class="bx bx-cart fs-3"></i>
+                <span
+                  class="position-absolute top-0 end-10 translate-middle badge rounded-pill bg-danger cart-count"
+                >
+                  0
+                  <span class="visually-hidden">unread messages</span>
+                </span>
+              </button>
+              <button
+                type="button"
+                class="btn"
+                data-bs-toggle="modal"
+                data-bs-target="#userValidation"
+              >
+                <i class="bx bx-user fs-3"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- Carrito -->
+    <div
+      class="modal fade"
+      id="cartModal"
+      tabindex="-1"
+      aria-labelledby="cartModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="cartModalLabel">Preview Cart</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body cart-container">
+            <!-- <div class="card mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="./assets/7.jpg"
+                    class="img-fluid rounded-start"
+                    alt="Product"
+                  />
+                </div>
+                <div class="col-md-8 position-relative">
+                  <div class="card-body">
+                    <h5 class="card-title text-green">Yumitos Chilli</h5>
+                    <p class="card-text">1 x $10.25</p>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-close position-absolute top-0 end-0 m-1"
+                    aria-label="Close"
+                  ></button>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <div class="modal-footer">
+            <div class="container d-flex justify-content-between">
+              <h4>Total:</h4>
+              <h4 class="text-green total-cart">$0</h4>
+            </div>
+            <div class="container d-flex justify-content-between">
+              <button type="button" class="btn btn-outline-success">
+                <a
+                  href="./pages/cart.html"
+                  class="text-green text-decoration-none"
+                  >View Cart</a
+                >
+              </button>
+              <button type="button" class="btn btn-success">
+                <a
+                  href="./pages/cart.html#cart-total"
+                  class="text-white text-decoration-none"
+                  >Check Out</a
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- User Validation -->
+    <div
+      class="modal fade"
+      id="userValidation"
+      tabindex="-1"
+      aria-labelledby="userValidationLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="userValidationLabel">
+              Fastkart Managment
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="admin-form">
+              <div class="mb-3">
+                <label for="input-admin-email" class="form-label"
+                  >Email address</label
+                >
+                <input
+                  type="email"
+                  class="form-control admin-control"
+                  id="input-admin-email"
+                  name="input-admin-email"
+                  aria-describedby="emailHelp"
+                />
+                <span class="admin-error admin-error-email d-none"
+                  >Email must be a valid address, e.g. me@mydomain.com</span
+                >
+                <div id="input-admin-email"></div>
+              </div>
+              <div class="mb-3">
+                <label for="input-admin-password" class="form-label"
+                  >Password</label
+                >
+                <input
+                  type="password"
+                  class="form-control admin-control"
+                  id="input-admin-password"
+                  name="input-admin-password"
+                />
+                <span class="admin-error admin-error-password d-none"
+                  >Password must alphanumeric (@ . _ - ) and be 8 - 20
+                  characters</span
+                >
+                <div id="input-admin-password"></div>
+              </div>
+              <button type="submit" id="btn-admin" class="btn color-green">
+                Login
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Principal nav -->
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container text-center">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="bx bxs-down-arrow"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <button
+                id="btn-categories"
+                class="btn color-green d-flex align-items-center"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bx bx-menu-alt-left fs-2"></i>
+                All Categories
+              </button>
+              <ul class="dropdown-menu">
+                <li id="type-veggies" class="categories">
+                  <a class="dropdown-item" href="#products-container"
+                    ><i class="bx bx-lemon"></i> Vegetables & Fruits</a
+                  >
+                </li>
+                <li id="type-beverages" class="categories">
+                  <a class="dropdown-item" href="#products-container"
+                    ><i class="bx bx-coffee"></i> Beverages</a
+                  >
+                </li>
+                <li id="type-meats" class="categories">
+                  <a class="dropdown-item" href="#products-container"
+                    ><i class="bx bx-sushi"></i> Meats & Seafood</a
+                  >
+                </li>
+                <li id="type-breaky" class="categories">
+                  <a class="dropdown-item" href="#products-container"
+                    ><i class="bx bx-baguette"></i> Breakfast & Dairy</a
+                  >
+                </li>
+                <li id="type-frozen" class="categories">
+                  <a class="dropdown-item" href="#products-container"
+                    ><i class="bx bx-fridge"></i> Frozen Foods</a
+                  >
+                </li>
+                <li id="type-snacks" class="categories">
+                  <a class="dropdown-item" href="#products-container"
+                    ><i class="bx bx-cake"></i> Biscuits & Snacks</a
+                  >
+                </li>
+                <li id="type-grocery" class="categories">
+                  <a class="dropdown-item" href="#products-container"
+                    ><i class="bx bx-cookie"></i> Grocery & Staples</a
+                  >
+                </li>
+                <li id="type-alcohol" class="categories">
+                  <a class="dropdown-item" href="#products-container"
+                    ><i class="bx bxs-wine"></i> Wines & Alcohol Drinks</a
+                  >
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Home
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Home</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Shop
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#shop">Fastkart</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Product
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#all-categories">Categories</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Mega Menu
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Blog
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Pages
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="./pages/favorites.html"
+                    >Favorites</a
+                  >
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./pages/cart.html">Cart</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Imagenes -->
+    <section class="container mb-5">
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-bs-ride="true"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./assets/4.jpg" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/5.jpg" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/6.jpg" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="./assets/7.jpg" class="d-block w-100" alt="..." />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+    <!-- Productos -->
+    <section id="shop" class="row container-fluid mt-5">
+      <div class="col-lg-3">
+        <div id="all-categories" class="container d-none d-lg-block">
+          <h2>Categories</h2>
+          <hr />
+          <ul id="main-categories" class="list-group">
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center pointer categories"
+              id="type-all"
+            >
+              <i class="bx bx-grid-small"></i> All Products
+              <span id="stock-all" class="badge rounded-pill color-orange"
+                >0</span
+              >
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center pointer categories"
+              id="type-veggies"
+            >
+              <i class="bx bx-lemon"></i> Vegetables & Fruits
+              <span id="stock-veggie" class="badge rounded-pill color-orange"
+                >0</span
+              >
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center pointer categories"
+              id="type-beverages"
+            >
+              <i class="bx bx-coffee"></i> Beverages
+              <span id="stock-beverages" class="badge rounded-pill color-orange"
+                >0</span
+              >
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center pointer categories"
+              id="type-meats"
+            >
+              <i class="bx bx-sushi"></i> Meats & Seafood
+              <span id="stock-meats" class="badge rounded-pill color-orange"
+                >0</span
+              >
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center pointer categories"
+              id="type-breaky"
+            >
+              <i class="bx bx-baguette"></i> Breakfast & Dairy
+              <span id="stock-breaky" class="badge rounded-pill color-orange"
+                >0</span
+              >
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center pointer categories"
+              id="type-frozen"
+            >
+              <i class="bx bx-fridge"></i> Frozen Foods
+              <span id="stock-frozen" class="badge rounded-pill color-orange"
+                >0</span
+              >
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center pointer categories"
+              id="type-snacks"
+            >
+              <i class="bx bx-cake"></i> Biscuits & Snacks
+              <span id="stock-snacks" class="badge rounded-pill color-orange"
+                >0</span
+              >
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center pointer categories"
+              id="type-grocery"
+            >
+              <i class="bx bx-cookie"></i> Grocery & Staples
+              <span id="stock-grocery" class="badge rounded-pill color-orange"
+                >0</span
+              >
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center pointer categories"
+              id="type-alcohol"
+            >
+              <i class="bx bxs-wine"></i> Wines & Alcohol Drinks
+              <span id="stock-alcohol" class="badge rounded-pill color-orange"
+                >0</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="products-container" class="col col-lg-9">
+        <h2>Products</h2>
+        <hr />
+        <div
+          id="cards-container"
+          class="container d-flex flex-wrap justify-content-evenly"
+        >
+          <!-- <div class="card m-2" style="width: 18rem">
+            <img
+              src="./assets/7.jpg"
+              class="card-img-top position-relative"
+              alt="..."
+            />
+            <button
+              type="button"
+              class="btn btn-outline-danger position-absolute top-10 start-0 m-2"
+            >
+              <i class="bx bx-heart fs-5"></i>
+            </button>
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">Snacks</h6>
+              <h5 class="card-title">Yumitos Chilli Sprinkled Potato Chips</h5>
+              <p class="card-text">100 gr.</p>
+              <p class="card-text text-green">$10.25</p>
+              <div class="input-group mb-3 mx-auto w-75">
+                <button type="button" class="input-group-text btn color-green">
+                  <i class="bx bx-minus"></i>
+                </button>
+                <input
+                  type="text"
+                  class="form-control ps-5"
+                  aria-label="Amount (to the nearest dollar)"
+                  value="0"
+                  disabled
+                />
+                <button type="button" class="input-group-text btn color-green">
+                  <i class="bx bx-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="container-fluid bg-light mt-5 py-4">
+      <div class="row py-3">
+        <div class="col">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-light">
+              <img src="./assets/logo.png" alt="Fast Kart" width="150" />
+            </li>
+            <li class="list-group-item bg-light">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            </li>
+            <li class="list-group-item bg-light">
+              <i class="bx bx-store-alt"></i> 1418 Riverwood Drive, CA 96052, US
+            </li>
+            <li class="list-group-item bg-light">
+              <i class="bx bx-envelope"></i> support@fastkart.com
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-light"><h4>Categories</h4></li>
+            <li class="list-group-item bg-light">Vegetables & Fruit</li>
+            <li class="list-group-item bg-light">Beverages</li>
+            <li class="list-group-item bg-light">Meats & Seafood</li>
+            <li class="list-group-item bg-light">Frozen Foods</li>
+            <li class="list-group-item bg-light">Biscuits & Snacks</li>
+            <li class="list-group-item bg-light">Grocery & Staples</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-light"><h4>Useful Links</h4></li>
+            <li class="list-group-item bg-light">Home</li>
+            <li class="list-group-item bg-light">Shop</li>
+            <li class="list-group-item bg-light">About Us</li>
+            <li class="list-group-item bg-light">Blog</li>
+            <li class="list-group-item bg-light">Contact Us</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-light"><h4>Help Center</h4></li>
+            <li class="list-group-item bg-light">Your Order</li>
+            <li class="list-group-item bg-light">Your Account</li>
+            <li class="list-group-item bg-light">Track Order</li>
+            <li class="list-group-item bg-light">Your Wishlist</li>
+            <li class="list-group-item bg-light">Search</li>
+            <li class="list-group-item bg-light">FAQ</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-light"><h4>Contact Us</h4></li>
+            <li class="list-group-item bg-light">
+              <i class="bx bx-phone"></i>Hotline 24/7:
+              <h6>+91 888 104 2340</h6>
+            </li>
+            <li class="list-group-item bg-light">
+              <i class="bx bx-envelope"></i>Email Address:
+              <h6>fastkart@hotmail.com</h6>
+            </li>
+            <li class="list-group-item bg-light">
+              <div class="container">Download App:</div>
+              <div class="container mt-3">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/300/300218.png"
+                  alt=""
+                  width="50"
+                />
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/5977/5977575.png"
+                  alt=""
+                  width="50"
+                />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row align-items-center border-top py-3">
+        <div class="col">@2022 Fastkart All rights reserved</div>
+        <div class="col-lg-4">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/196/196565.png"
+            alt="Paypal"
+            width="50"
+          />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/196/196578.png"
+            alt="Visa"
+            width="50"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png"
+            alt="MasterCard"
+            width="40"
+          />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/5968/5968382.png"
+            alt="Stripe"
+            width="50"
+          />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/349/349228.png"
+            alt="American Express"
+            width="50"
+          />
+        </div>
+        <div class="col">
+          Stay connected: <i class="bx bxl-facebook"></i
+          ><i class="bx bxl-twitter"></i><i class="bx bxl-instagram"></i
+          ><i class="bx bxl-pinterest-alt"></i>
+        </div>
+        <div class="col-lg-1">
+          <button class="btn color-green">
+            <i class="bx bxs-chevron-up"></i>
+          </button>
+        </div>
+      </div>
+    </footer>
+    <!-- JS -->
+    <script src="./scripts/main.js" type="module"></script>
+  </body>
+</html>

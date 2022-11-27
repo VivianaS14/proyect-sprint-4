@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --green: #0caf9c;
+  --orange: #f88406;
+  --gray-lg: #fafafa;
+  --white: #ffffff;
+  --black: #111111;
+}
+
+body {
+  font-family: "Mulish", sans-serif;
+}
+
+.color-green {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.color-orange {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.bg-white {
+  background-color: var(--white);
+}
+
+.text-white {
+  color: var(--white);
+}
+
+.text-green {
+  color: var(--green);
+}
+
+.text-black {
+  color: var(--black);
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+#btn-search:hover {
+  background-color: var(--gray-lg);
+  color: var(--black);
+}
+
+/* Validation Admin */
+.admin-error {
+  display: block;
+  font-size: 0.7rem;
+  color: orangered;
+  height: 0;
+}
+
+.border-error {
+  border: 1px solid orangered;
+}
+.border-error:focus {
+  outline: 1px solid orangered;
+}

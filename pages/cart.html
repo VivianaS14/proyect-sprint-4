@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fast Kart</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="sticky-top">
+      <!-- Primera nav -->
+      <div class="container-fluid d-none d-lg-block py-1 color-green">
+        <div class="row justify-content-between">
+          <div class="col-5 ms-5">
+            <p class="d-inline p-2">Something you love is now on sale!</p>
+            <a href="" class="d-inline p-2 text-white">Buy Now!</a>
+          </div>
+          <div class="col-3 text-end me-5">
+            <img
+              class="d-inline"
+              src="https://cdn-icons-png.flaticon.com/512/3373/3373318.png"
+              alt=""
+              width="30"
+            />
+            <p class="d-inline p-2">English</p>
+            <p class="d-inline p-2">USD</p>
+          </div>
+        </div>
+      </div>
+      <!-- Segunda nav -->
+      <div
+        class="bg-white navbar navbar-expand-lg text-center py-3 py-lg-2 px-2 px-lg-5"
+      >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+          <a class="navbar-brand" href="../index.html">
+            <img src="../assets/logo.png" alt="Fast Kart" width="150" />
+          </a>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand d-none d-sm-inline" href="#">
+            <img src="../assets/logo.png" alt="Fast Kart" width="150" />
+          </a>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 p-0 container">
+            <li class="nav-item col-lg-2">
+              <a class="nav-link active" aria-current="page" href="#">
+                <i class="bx bx-map fs-3"></i>
+              </a>
+            </li>
+            <li class="nav-item col-lg-6 mb-3 mb-lg-0">
+              <form class="d-flex input-group col-6" role="search">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Recipient's username"
+                  aria-label="Recipient's username"
+                  aria-describedby="button-addon2"
+                />
+                <button
+                  class="btn btn-outline-secondary color-orange"
+                  type="button"
+                  id="btn-search"
+                >
+                  <i class="bx bx-search"></i>
+                </button>
+              </form>
+            </li>
+            <li class="nav-item col-lg mb-2 mb-lg-0">
+              <button class="btn border-end">
+                <i class="bx bx-phone-call fs-3"></i>
+              </button>
+              <button class="btn border-end">
+                <a href="./favorites.html" class="text-black"
+                  ><i class="bx bx-heart fs-3"></i
+                ></a>
+              </button>
+              <button class="btn position-relative">
+                <a href="./cart.html" class="text-black">
+                  <i class="bx bx-cart fs-3"></i>
+                </a>
+              </button>
+              <button class="btn border-start">
+                <i class="bx bx-user fs-3"></i>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <!-- Principal nav -->
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container text-center">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="bx bxs-down-arrow"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <button
+                id="btn-categories"
+                class="btn color-green d-flex align-items-center"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bx bx-menu-alt-left fs-2"></i>
+                All Categories
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bx bx-lemon"></i> Vegetables & Fruits</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bx bx-coffee"></i> Beverages</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bx bx-sushi"></i> Meats & Seafood</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bx bx-baguette"></i> Breakfast & Dairy</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bx bx-fridge"></i> Frozen Foods</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bx bx-cake"></i> Biscuits & Snacks</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bx bx-cookie"></i> Grocery & Staples</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="bx bxs-wine"></i> Wines & Alcohol Drinks</a
+                  >
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Home
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="../index.html">Home</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Shop
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="../index.html">Fastkart</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Product
+              </a>
+              <ul class="dropdown-menu">
+                <a class="dropdown-item" href="../index.html">Categories</a>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Mega Menu
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Blog
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Pages
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="./favorites.html">Favorites</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./cart.html">Cart</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Menu -->
+    <section class="container-fluid bg-light p-4 d-flex justify-content-around">
+      <h2>Cart</h2>
+      <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+        <ol class="breadcrumb m-0">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Cart</li>
+        </ol>
+      </nav>
+    </section>
+    <!-- Cart -->
+    <section class="container">
+      <div class="container cart-produts-container">
+      <!-- <div
+        class="container bg-light d-flex justify-content-around align-items-center my-4 p-2"
+          >
+            <img src="../assets/7.jpg" alt="" class="" width="250" />
+            <div class="container">
+              <h5>Yumitos Chilli</h5>
+              <p>Sold By: Fresho</p>
+              <p>Quantity -500gr</p>
+            </div>
+            <div class="container">
+              <p>Price</p>
+              <h5 class="text-green">$10.25</h5>
+            </div>
+            <div class="container">
+              <p>Qty</p>
+              <div class="input-group mb-3 mx-auto w-100">
+                <button type="button" class="input-group-text btn color-green">
+                  <i class="bx bx-minus"></i>
+                </button>
+                <input
+                  type="text"
+                  class="form-control ps-4"
+                  aria-label="Amount (to the nearest dollar)"
+                  value="0"
+                  disabled
+                />
+                <button type="button" class="input-group-text btn color-green">
+                  <i class="bx bx-plus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="container w-75">
+              <p>Total</p>
+              <h5>$10.25</h5>
+            </div>
+            <div class="container">
+              <p>Action</p>
+              <a href="">Save for favorites</a>
+              <a href="">Remove</a>
+            </div>
+            </div>
+          </div> -->
+
+      </div>
+
+      <div id="cart-total" class="card bg-light">
+        <div class="card-header">Cart Total</div>
+        <div class="card-body">
+          <div class="container">
+            <p class="card-title">Coupon Apply</p>
+            <div class="input-group mb-3">
+              <input
+                id="input-coupon"
+                type="text"
+                class="form-control"
+                placeholder="Coupon Apply"
+                aria-label="Coupon Apply"
+                aria-describedby="button-addon2"
+              />
+              <button
+                id="btn-coupon"
+                class="btn btn-outline-secondary"
+                type="button"
+                id="button-addon2"
+              >
+                Apply
+              </button>
+            </div>
+            <p id="not-valid" class="text-danger d-none">Coupon not valid</p>
+          </div>
+          <p class="card-text">
+            <div class="container d-flex justify-content-between subtotal-cart">
+              <h5>Subtotal:</h5>
+              <h5>$0</h5>
+            </div>
+            <div class="container d-flex justify-content-between coupon-cart">
+              <h5>Coupon Discount:</h5>
+              <h5>- $0.00</h5>
+            </div>
+            <div class="container d-flex justify-content-between shipping-cart">
+              <h5>Shipping:</h5>
+              <h5>$6.29</h5>
+            </div>
+          </p>
+        </div>
+        <div class="card-footer">
+          <div class="container d-flex justify-content-between total-cart">
+            <h5>Total (USD):</h5>
+            <h5>$0</h5>
+          </div>
+        </div>
+        <button type="button" class="btn btn-danger my-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Process To Checkout
+        </button>
+        <!-- Modal CheckOut -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Process To Checkout</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action="" id="form-checkout">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="input-id form-control" id="floatingInput" placeholder="ID">
+                    <label for="floatingInput">ID</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="input-name form-control" id="floatingInput" placeholder="Full Name">
+                    <label for="floatingInput">Full Name</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="email" class="input-email form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="input-address form-control" id="floatingInput" placeholder="Phone Number">
+                    <label for="floatingInput">Address</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="text" class="input-phone form-control" id="floatingInput" placeholder="Phone Number">
+                    <label for="floatingInput">Phone Number</label>
+                  </div>
+                  <button type="submit" class="btn color-green my-3">
+                    Buy Now
+                  </button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="../index.html#all-categories" class="btn btn-light mb-3"><i class='bx bx-left-arrow-alt'></i>Return To Shopping</a>
+        
+      </div>
+      
+    </section>
+    <!-- Footer -->
+    <footer class="container-fluid bg-light mt-5 py-4">
+      <div class="row py-3">
+        <div class="col">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-light">
+              <img src="../assets/logo.png" alt="Fast Kart" width="150" />
+            </li>
+            <li class="list-group-item bg-light">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            </li>
+            <li class="list-group-item bg-light">
+              <i class="bx bx-store-alt"></i> 1418 Riverwood Drive, CA 96052, US
+            </li>
+            <li class="list-group-item bg-light">
+              <i class="bx bx-envelope"></i> support@fastkart.com
+            </li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-light"><h4>Categories</h4></li>
+            <li class="list-group-item bg-light">Vegetables & Fruit</li>
+            <li class="list-group-item bg-light">Beverages</li>
+            <li class="list-group-item bg-light">Meats & Seafood</li>
+            <li class="list-group-item bg-light">Frozen Foods</li>
+            <li class="list-group-item bg-light">Biscuits & Snacks</li>
+            <li class="list-group-item bg-light">Grocery & Staples</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-light"><h4>Useful Links</h4></li>
+            <li class="list-group-item bg-light">Home</li>
+            <li class="list-group-item bg-light">Shop</li>
+            <li class="list-group-item bg-light">About Us</li>
+            <li class="list-group-item bg-light">Blog</li>
+            <li class="list-group-item bg-light">Contact Us</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-light"><h4>Help Center</h4></li>
+            <li class="list-group-item bg-light">Your Order</li>
+            <li class="list-group-item bg-light">Your Account</li>
+            <li class="list-group-item bg-light">Track Order</li>
+            <li class="list-group-item bg-light">Your Wishlist</li>
+            <li class="list-group-item bg-light">Search</li>
+            <li class="list-group-item bg-light">FAQ</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-light"><h4>Contact Us</h4></li>
+            <li class="list-group-item bg-light">
+              <i class="bx bx-phone"></i>Hotline 24/7:
+              <h6>+91 888 104 2340</h6>
+            </li>
+            <li class="list-group-item bg-light">
+              <i class="bx bx-envelope"></i>Email Address:
+              <h6>fastkart@hotmail.com</h6>
+            </li>
+            <li class="list-group-item bg-light">
+              <div class="container">Download App:</div>
+              <div class="container mt-3">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/300/300218.png"
+                  alt=""
+                  width="50"
+                />
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/5977/5977575.png"
+                  alt=""
+                  width="50"
+                />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row align-items-center border-top py-3">
+        <div class="col">@2022 Fastkart All rights reserved</div>
+        <div class="col-lg-4">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/196/196565.png"
+            alt="Paypal"
+            width="50"
+          />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/196/196578.png"
+            alt="Visa"
+            width="50"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1280px-Mastercard-logo.svg.png"
+            alt="MasterCard"
+            width="40"
+          />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/5968/5968382.png"
+            alt="Stripe"
+            width="50"
+          />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/349/349228.png"
+            alt="American Express"
+            width="50"
+          />
+        </div>
+        <div class="col">
+          Stay connected: <i class="bx bxl-facebook"></i
+          ><i class="bx bxl-twitter"></i><i class="bx bxl-instagram"></i
+          ><i class="bx bxl-pinterest-alt"></i>
+        </div>
+        <div class="col-lg-1">
+          <button class="btn color-green">
+            <i class="bx bxs-chevron-up"></i>
+          </button>
+        </div>
+      </div>
+    </footer>
+    <script src="../scripts/main.js" type="module"></script>
+  </body>
+</html>
