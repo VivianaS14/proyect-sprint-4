@@ -5,7 +5,7 @@ import { amountProducts, showCountCart, showCartModal, totalCartModal, showCart,
 import { checkOut } from "./checkout.js";
 import { validationUser, showProducts, addProduct, getStockProduct, searchProd, logOut, control } from "./user.js";
 
-if (window.location.pathname === '/proyect-sprint04/index.html') {
+if (window.location.pathname === '/index.html') {
     /* IMPRIMIR PRODUCTOS */
     let dataProducts = await getProducts("?_sort=name");
     printAllProducts(dataProducts);
@@ -20,7 +20,7 @@ if (window.location.pathname === '/proyect-sprint04/index.html') {
     totalCartModal();
     /* ADMIN VALIDATION */
     validationUser();
-} else if (window.location.pathname === '/proyect-sprint04/pages/favorites.html') {
+} else if (window.location.pathname === '/pages/favorites.html') {
     /* IMPRIMIR FAVORITOS */
     let dataFavorites = await getFavorites();
     printFavorites(dataFavorites);
@@ -32,7 +32,7 @@ if (window.location.pathname === '/proyect-sprint04/index.html') {
     totalCartModal();
     /* ADMIN VALIDATION */
     validationUser();
-} else if (window.location.pathname === '/proyect-sprint04/pages/cart.html') {
+} else if (window.location.pathname === '/pages/cart.html') {
     /* CARRITO */
     showCart();
     amountProducts();
@@ -41,7 +41,7 @@ if (window.location.pathname === '/proyect-sprint04/index.html') {
     discountCart();
     /* CHECKOUT */
     checkOut();
-} else if (window.location.pathname === '/proyect-sprint04/pages/admin.html') {
+} else if (window.location.pathname === '/pages/admin.html') {
     /* ADMIN CONTROL */
     addProduct();
     /* PRODUCTS */

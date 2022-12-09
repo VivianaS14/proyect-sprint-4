@@ -78,11 +78,11 @@ export const deleteToCart = () => {
             let products = JSON.parse(localStorage.getItem('shoppingFastCart'));
             products.splice(products.findIndex(e => e.id == btn.getAttribute('id')), 1);
             localStorage.setItem('shoppingFastCart', JSON.stringify(products));
-            if (window.location.pathname === '/proyect-sprint04/index.html' || window.location.pathname === '/proyect-sprint04/pages/favorites.html') {
+            if (window.location.pathname === '/index.html' || window.location.pathname === '/pages/favorites.html') {
                 showCartModal();
                 showCountCart();
                 totalCartModal();
-            } else if (window.location.pathname === '/proyect-sprint04/pages/cart.html') {
+            } else if (window.location.pathname === '/pages/cart.html') {
                 showCart();
                 showCartTotal();
             }

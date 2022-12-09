@@ -19,7 +19,7 @@ export const addFavorite = () => {
                 stock: product[0].stock
             }
             await httpPOST(URL_PATHS.favorites, newProduct);
-            window.location.pathname = '/proyect-sprint04/pages/favorites.html';
+            window.location.pathname = '/pages/favorites.html';
         })
     });
 };

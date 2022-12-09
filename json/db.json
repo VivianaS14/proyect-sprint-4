@@ -1,15 +1,6 @@
 {
   "favorites": [
     {
-      "id": 503,
-      "category": "Frozen Foods",
-      "name": "Ice Cream",
-      "quantity": "110 gr",
-      "price": 90,
-      "image": "https://cdn-icons-png.flaticon.com/512/938/938114.png",
-      "stock": 10
-    },
-    {
       "id": 402,
       "category": "Breakfast & Dairy",
       "name": "Scones",
@@ -19,12 +10,30 @@
       "stock": 10
     },
     {
-      "id": 502,
+      "id": 504,
       "category": "Frozen Foods",
-      "name": "Frozen Chips",
+      "name": "Fish fillets",
       "quantity": "110 gr",
       "price": 90,
-      "image": "https://cdn-icons-png.flaticon.com/512/305/305385.png",
+      "image": "https://cdn-icons-png.flaticon.com/512/1699/1699282.png",
+      "stock": 10
+    },
+    {
+      "id": 803,
+      "category": "Wines & Alcohol Drinks",
+      "name": "Beer",
+      "quantity": "50 gr",
+      "price": 850,
+      "image": "https://cdn-icons-png.flaticon.com/512/3993/3993977.png",
+      "stock": 10
+    },
+    {
+      "id": 403,
+      "category": "Breakfast & Dairy",
+      "name": "Panckaes",
+      "quantity": "50 gr",
+      "price": 200,
+      "image": "https://cdn-icons-png.flaticon.com/512/1256/1256465.png",
       "stock": 10
     }
   ],
@@ -133,6 +142,42 @@
           "quantity": "50 gr",
           "price": 850,
           "image": "https://cdn-icons-png.flaticon.com/512/2722/2722533.png",
+          "amount": "2"
+        }
+      ]
+    },
+    {
+      "id": "78945",
+      "name": "Laura",
+      "email": "laura@mail.com",
+      "address": "Calle 75",
+      "phone": "30214563",
+      "products": [
+        {
+          "id": 102,
+          "category": "Vegetables & Fruits",
+          "name": "Banana",
+          "quantity": "100 gr",
+          "price": 100,
+          "image": "https://cdn-icons-png.flaticon.com/512/2909/2909808.png",
+          "amount": 3
+        },
+        {
+          "id": 804,
+          "category": "Wines & Alcohol Drinks",
+          "name": "Cocktail",
+          "quantity": "50 gr",
+          "price": 850,
+          "image": "https://cdn-icons-png.flaticon.com/512/920/920539.png",
+          "amount": "3"
+        },
+        {
+          "id": 402,
+          "category": "Breakfast & Dairy",
+          "name": "Scones",
+          "quantity": "50 gr",
+          "price": 200,
+          "image": "https://cdn-icons-png.flaticon.com/512/2000/2000040.png",
           "amount": "2"
         }
       ]
@@ -495,9 +540,9 @@
       "category": "Biscuits & Snacks",
       "name": "Mexican Snack",
       "quantity": "150 gr",
-      "price": 220,
+      "price": "100",
       "image": "https://cdn-icons-png.flaticon.com/512/859/859293.png",
-      "stock": 10
+      "stock": "10"
     },
     {
       "id": 606,
