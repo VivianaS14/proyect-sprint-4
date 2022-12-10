@@ -1,9 +1,9 @@
-import { getProducts, printAllProducts, stockProducts } from "./products.js";
-import { searchCategories, searchInput } from "./search.js";
-import { getFavorites, printFavorites, deleteFavorites } from "./favorites.js";
-import { amountProducts, showCountCart, showCartModal, totalCartModal, showCart, countProduct, showCartTotal, discountCart } from "./cart.js";
-import { checkOut } from "./checkout.js";
-import { validationUser, showProducts, addProduct, getStockProduct, searchProd, logOut, control } from "./user.js";
+import { getProducts, printAllProducts, stockProducts } from "./scripts/products";
+import { searchCategories, searchInput } from "./scripts/search";
+import { getFavorites, printFavorites, deleteFavorites } from "./scripts/favorites";
+import { amountProducts, showCountCart, showCartModal, totalCartModal, showCart, countProduct, showCartTotal, discountCart } from "./scripts/cart";
+import { checkOut } from "./scripts/checkout";
+import { validationUser, showProducts, addProduct, getStockProduct, searchProd, logOut, control } from "./scripts/user";
 
 if (window.location.pathname === '/index.html') {
     /* IMPRIMIR PRODUCTOS */
