@@ -43,7 +43,7 @@ export const loginAdmin = () => {
     formLogin.addEventListener('submit', e => {
         e.preventDefault();
         if (admin === 'admin@fastkart.com' && pass === '@Admin-1') {
-            window.location.pathname = '/proyect-sprint04/pages/admin.html'
+            window.location.pathname = '/pages/admin.html'
             console.log('Entre');
         }
     })
@@ -219,7 +219,7 @@ export const deleteProduct = () => {
 export const logOut = () => {
     const btnLogOut = document.querySelector('.btn-log-out');
     btnLogOut.addEventListener('click', () => {
-        window.location.pathname = '/proyect-sprint04/index.html';
+        window.location.pathname = '../index.html';
     })
 }
 

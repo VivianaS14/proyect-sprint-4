@@ -1,21 +1,12 @@
 {
   "favorites": [
     {
-      "id": 402,
-      "category": "Breakfast & Dairy",
-      "name": "Scones",
-      "quantity": "50 gr",
-      "price": 200,
-      "image": "https://cdn-icons-png.flaticon.com/512/2000/2000040.png",
-      "stock": 10
-    },
-    {
-      "id": 504,
-      "category": "Frozen Foods",
-      "name": "Fish fillets",
-      "quantity": "110 gr",
-      "price": 90,
-      "image": "https://cdn-icons-png.flaticon.com/512/1699/1699282.png",
+      "id": 302,
+      "category": "Meats & Seafood",
+      "name": "Chicken",
+      "quantity": "450 gr",
+      "price": 500,
+      "image": "https://cdn-icons-png.flaticon.com/512/3005/3005103.png",
       "stock": 10
     },
     {
@@ -25,15 +16,6 @@
       "quantity": "50 gr",
       "price": 850,
       "image": "https://cdn-icons-png.flaticon.com/512/3993/3993977.png",
-      "stock": 10
-    },
-    {
-      "id": 403,
-      "category": "Breakfast & Dairy",
-      "name": "Panckaes",
-      "quantity": "50 gr",
-      "price": 200,
-      "image": "https://cdn-icons-png.flaticon.com/512/1256/1256465.png",
       "stock": 10
     }
   ],
@@ -207,7 +189,7 @@
       "category": "Vegetables & Fruits",
       "name": "Strawberry",
       "quantity": "100 gr",
-      "price": "120",
+      "price": "200",
       "image": "https://cdn-icons-png.flaticon.com/512/2136/2136519.png",
       "stock": "10"
     },
